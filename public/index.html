@@ -150,9 +150,9 @@
   }
 
   .hero p {
-    font-size: 15px;
-    color: var(--kto-dark-5);
-    font-weight: 400;
+    font-size: 17px;
+    color: #bbb;
+    font-weight: 500;
     max-width: 480px;
     margin: 0 auto;
     line-height: 1.5;
@@ -417,12 +417,100 @@
     margin-bottom: 12px;
   }
 
+  /* ── PROMO SECTION ── */
+  .promo-section {
+    padding: 20px 24px 60px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .promo-inner {
+    padding: 36px 0;
+  }
+
+  .promo-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 32px;
+  }
+
+  .steps-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+  }
+
+  .step-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--kto-yellow);
+    color: #000;
+    font-family: 'NNSwinton', 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+  }
+
+  .step p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.6;
+  }
+
+  .promo-table-wrap {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid var(--kto-dark-7);
+  }
+
+  .promo-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .promo-table th {
+    background: var(--kto-dark-8);
+    color: #fff;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--kto-dark-7);
+  }
+
+  .promo-table td {
+    padding: 14px 16px;
+    color: #ccc;
+    border-bottom: 1px solid var(--kto-dark-7);
+  }
+
+  .promo-table tr:last-child td {
+    border-bottom: none;
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 720px) {
     .matches-grid {
       grid-template-columns: 1fr;
       max-width: 420px;
       margin: 0 auto;
+    }
+    .steps-row {
+      grid-template-columns: 1fr;
+      max-width: 320px;
+      margin: 0 auto;
+      gap: 28px;
+    }
+    .promo-inner {
+      padding: 28px 0;
     }
   }
 
@@ -473,8 +561,8 @@
       <span class="pulse"></span>
       Eventos Populares
     </div>
-    <h1>Os jogos mais quentes de hoje</h1>
-    <p>Acompanhe as melhores odds para os principais jogos de futebol do dia.</p>
+    <h1>33% DE GANHO AUMENTADO</h1>
+    <p>Os jogos mais quentes de hoje</p>
   </section>
 
   <!-- MATCHES -->
@@ -487,6 +575,59 @@
       <p style="color:#828282;font-size:13px">Carregando eventos...</p>
     </div>
     <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+  </section>
+
+  <!-- PROMO INFO -->
+  <section class="promo-section">
+    <div class="promo-inner">
+
+      <h2 class="promo-heading">Como participar?</h2>
+
+      <div class="steps-row">
+        <div class="step">
+          <div class="step-circle">1</div>
+          <p>Crie sua conta na KTO, leva apenas 2 minutos;</p>
+        </div>
+        <div class="step">
+          <div class="step-circle">2</div>
+          <p>Use "Criar Aposta" com no mínimo 3 seleção e odds 3.00 no evento elegível da semana;</p>
+        </div>
+        <div class="step">
+          <div class="step-circle">3</div>
+          <p>Ative o Ganho Aumentado no bilhete e confirme a aposta de até R$ 75;</p>
+        </div>
+        <div class="step">
+          <div class="step-circle">4</div>
+          <p>Se acertar o palpite, ganhe o prêmio com os valores extras.</p>
+        </div>
+      </div>
+
+      <h2 class="promo-heading" style="margin-top:48px">Eventos elegíveis na semana:</h2>
+
+      <div class="promo-table-wrap">
+        <table class="promo-table">
+          <thead>
+            <tr>
+              <th>Competição</th>
+              <th>Fase</th>
+              <th>Datas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Champions League, Libertadores, Sul-Americana</td>
+              <td>Quartas de Final, 1ª rodada, 1ª rodada</td>
+              <td>07/04 a 09/04</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="text-align:center; margin-top:36px;">
+        <a href="https://www.kto.bet.br/promo/33-ganho-aumentado" style="color:var(--kto-dark-5); font-size:13px; text-decoration:underline; text-underline-offset:3px;" target="_blank" rel="noopener">Ver termos e condições completos</a>
+      </p>
+
+    </div>
   </section>
 
   <!-- FOOTER -->
