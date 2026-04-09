@@ -120,7 +120,8 @@
     color: var(--kto-red);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    margin-bottom: 20px;
+    margin-top: 16px;
+    margin-bottom: 0;
   }
 
   .hero-badge .pulse {
@@ -138,7 +139,7 @@
 
   .hero h1 {
     font-family: 'NNSwinton', 'Inter', sans-serif;
-    font-size: clamp(32px, 5.5vw, 54px);
+    font-size: clamp(32px, 6vw, 64px);
     font-weight: 800;
     font-style: italic;
     text-transform: uppercase;
@@ -176,7 +177,7 @@
   /* ── MATCH CARD ── */
   .match-card {
     background: var(--card-bg);
-    border-radius: 14px;
+    border-radius: 20px;
     border: none;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -310,9 +311,9 @@
 
   .odd-btn {
     background: var(--kto-dark-8);
-    border: 1px solid var(--kto-dark-7);
+    border: none;
     border-radius: 8px;
-    padding: 10px 8px;
+    padding: 6px 8px;
     text-align: center;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -322,7 +323,6 @@
 
   .odd-btn:hover {
     background: var(--kto-dark-7);
-    border-color: var(--kto-dark-6);
   }
 
   .odd-btn .label {
@@ -529,14 +529,13 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .hero-badge, .hero h1, .hero p {
+  .hero h1, .hero .hero-badge {
     opacity: 0;
     transform: translateY(12px);
     animation: fadeUp 0.6s ease forwards;
   }
 
-  .hero h1 { animation-delay: 0.1s; }
-  .hero p { animation-delay: 0.2s; }
+  .hero .hero-badge { animation-delay: 0.15s; }
 
   @keyframes fadeUp {
     to { opacity: 1; transform: translateY(0); }
@@ -557,12 +556,11 @@
 
   <!-- HERO -->
   <section class="hero">
+    <h1>33% DE GANHO AUMENTADO</h1>
     <div class="hero-badge">
       <span class="pulse"></span>
-      Eventos Populares
+      Top 3 Jogos de Hoje
     </div>
-    <h1>33% DE GANHO AUMENTADO</h1>
-    <p>Top 3 jogos de hoje</p>
   </section>
 
   <!-- MATCHES -->
@@ -680,7 +678,7 @@
    * ║    competition: "Champions League",                             ║
    * ║    matchTime: "14 ABR · 16:00",                                 ║
    * ║    odds: { home: 1.65, draw: 3.90, away: 4.75 },               ║
-   * ║    eventUrl: "https://www.kto.bet.br/app/esportes/..."          ║
+   * ║    eventUrl: "https://www.kto.bet.br/esportes/..."              ║
    * ║  }]                                                             ║
    * ║                                                                 ║
    * ╚══════════════════════════════════════════════════════════════════╝
@@ -697,28 +695,28 @@
   // ── FALLBACK DATA (used when API_URL is null) ──────────────────
   const FALLBACK_DATA = [
     {
-      homeTeam: "Barcelona",
-      awayTeam: "Atlético Madrid",
+      homeTeam: "Atlético Madrid",
+      awayTeam: "Barcelona",
       competition: "Champions League",
       matchTime: "14 ABR · 16:00",
-      odds: { home: 1.65, draw: 3.90, away: 4.75 },
-      eventUrl: "https://www.kto.bet.br/app/esportes/futebol/champions-league/barcelona---atletico-madrid/1027014197",
+      odds: { home: 2.20, draw: 3.40, away: 3.10 },
+      eventUrl: "https://www.kto.bet.br/esportes/futebol/champions-league/atletico-madrid---barcelona/1027031764",
     },
     {
-      homeTeam: "Paris Saint-Germain",
-      awayTeam: "Liverpool",
+      homeTeam: "Liverpool",
+      awayTeam: "Paris Saint-Germain",
       competition: "Champions League",
       matchTime: "14 ABR · 16:00",
-      odds: { home: 2.40, draw: 3.50, away: 2.75 },
-      eventUrl: "https://www.kto.bet.br/app/esportes/futebol/champions-league/psg---liverpool/1027014200",
+      odds: { home: 2.30, draw: 3.50, away: 2.90 },
+      eventUrl: "https://www.kto.bet.br/esportes/futebol/champions-league/liverpool---psg/1027014200",
     },
     {
-      homeTeam: "Real Madrid",
-      awayTeam: "Bayern München",
+      homeTeam: "Bayern München",
+      awayTeam: "Real Madrid",
       competition: "Champions League",
       matchTime: "15 ABR · 16:00",
-      odds: { home: 2.10, draw: 3.60, away: 3.20 },
-      eventUrl: "https://www.kto.bet.br/app/esportes/futebol/champions-league/real-madrid---bayern-munchen/1027014198",
+      odds: { home: 1.85, draw: 3.70, away: 4.00 },
+      eventUrl: "https://www.kto.bet.br/esportes/futebol/champions-league/bayern-munchen---real-madrid/1027014198",
     },
   ];
 
@@ -745,7 +743,7 @@
        *     draw: evt.markets?.["1x2"]?.draw ?? "-",
        *     away: evt.markets?.["1x2"]?.away ?? "-",
        *   },
-       *   eventUrl: `https://www.kto.bet.br/app/esportes/futebol/${evt.slug}/${evt.event_id}`,
+       *   eventUrl: `https://www.kto.bet.br/esportes/futebol/${evt.slug}/${evt.event_id}`,
        * }));
        */
 
@@ -780,7 +778,6 @@
           </div>
         </div>
         <div class="odds-section">
-          <div class="odds-divider"></div>
           <div class="odds-label">Resultado Final</div>
           <div class="odds-row">
             <div class="odd-btn"><div class="label">1</div><div class="value">${match.odds.home}</div></div>
