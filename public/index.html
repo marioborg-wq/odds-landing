@@ -160,7 +160,7 @@
 
   /* ── CARDS CONTAINER ── */
   .matches-section {
-    padding: 20px 24px 60px;
+    padding: 20px 24px 24px;
     max-width: 1120px;
     margin: 0 auto;
   }
@@ -169,7 +169,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 16px;
-    max-width: 780px;
+    max-width: 1120px;
     margin: 0 auto;
   }
 
@@ -419,8 +419,8 @@
 
   /* ── PROMO SECTION ── */
   .promo-section {
-    padding: 20px 24px 60px;
-    max-width: 780px;
+    padding: 0 24px 60px;
+    max-width: 1120px;
     margin: 0 auto;
   }
 
@@ -562,7 +562,7 @@
       Eventos Populares
     </div>
     <h1>33% DE GANHO AUMENTADO</h1>
-    <p>Os jogos mais quentes de hoje</p>
+    <p>Top 3 jogos de hoje</p>
   </section>
 
   <!-- MATCHES -->
@@ -690,7 +690,7 @@
   const CONFIG = {
     // Replace with your actual API endpoint (Option A or B above)
     API_URL: null, // e.g. "https://api.kto.bet.br/popular-events?sport=football&limit=2"
-    MAX_MATCHES: 2,
+    MAX_MATCHES: 3,
     REFRESH_INTERVAL_MS: 60000, // refresh odds every 60s
   };
 
@@ -711,6 +711,14 @@
       matchTime: "14 ABR · 16:00",
       odds: { home: 2.40, draw: 3.50, away: 2.75 },
       eventUrl: "https://www.kto.bet.br/app/esportes/futebol/champions-league/psg---liverpool/1027014200",
+    },
+    {
+      homeTeam: "Real Madrid",
+      awayTeam: "Bayern München",
+      competition: "Champions League",
+      matchTime: "15 ABR · 16:00",
+      odds: { home: 2.10, draw: 3.60, away: 3.20 },
+      eventUrl: "https://www.kto.bet.br/app/esportes/futebol/champions-league/real-madrid---bayern-munchen/1027014198",
     },
   ];
 
